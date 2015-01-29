@@ -1,10 +1,10 @@
-#N canvas 27 28 1204 630 10;
+#N canvas 140 49 1204 630 10;
 #N canvas 146 163 525 433 serin 0;
-#X obj 180 61 cnv 15 15 15 empty \$0-number-canvas 4 4 8 0 14 -233017
+#X obj 180 61 cnv 15 15 15 empty \$0-number-canvas 3 4 8 0 14 -233017
 -1 0;
 #X obj 200 225 s \$0-number-canvas;
 #X obj 60 61 hradio 15 1 1 8 empty empty empty 0 -6 0 8 -225271 -1
--1 4;
+-1 3;
 #X obj 60 13 inlet;
 #X msg 200 202 label \$1;
 #X obj 200 180 makefilename %d;
@@ -58,7 +58,7 @@
 #X floatatom -310 569 5 0 0 3 a4 - -;
 #X floatatom -264 569 5 0 0 3 a5 - -;
 #X obj -440 16 hradio 15 1 0 14 empty empty empty 0 -6 0 8 -176124
--1 -1 0;
+-1 -1 4;
 #X text -333 2 7;
 #X text -438 2 0;
 #X text -292 2 10;
@@ -386,8 +386,8 @@
 #X restore -415 543 pd display values without pegging the CPU;
 #N canvas 7 72 451 224 ver 0;
 #X obj 23 7 inlet;
-#X obj 250 100 cnv 15 200 17 empty \$0-version_cnv empty 4 10 0 12
--203904 -1 0;
+#X obj 250 100 cnv 15 200 17 empty \$0-version_cnv Firmata-2.3 4 10
+0 12 -203904 -1 0;
 #X obj 23 157 send \$0-version_cnv;
 #X msg 23 132 label \$1;
 #X obj 48 103 symbol;
@@ -410,8 +410,8 @@
 #X restore -114 249 pd ver;
 #N canvas 577 344 548 212 firmware 0;
 #X obj 123 2 inlet;
-#X obj 250 100 cnv 15 200 17 empty \$0-firmware_cnv empty 4 10 0 12
--232576 -66577 0;
+#X obj 250 100 cnv 15 200 17 empty \$0-firmware_cnv StandardFirmata.ino-2.3
+4 10 0 12 -232576 -66577 0;
 #X msg 123 156 label \$1;
 #X obj 148 127 symbol;
 #X obj 138 101 loadbang;
@@ -481,11 +481,11 @@
 #N canvas 94 215 810 414 pinMode 0;
 #X obj 226 274 outlet;
 #X obj 172 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-2 2 -8 0 10 -204800 -1 -1 0;
+2 2 -8 0 10 -204800 -1 -1 4;
 #X obj 182 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-3 2 -8 0 10 -204800 -1 -1 0;
+3 2 -8 0 10 -204800 -1 -1 4;
 #X obj 192 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-empty 2 -8 0 10 -204800 -1 -1 0;
+empty 2 -8 0 10 -204800 -1 -1 4;
 #X obj 202 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
 empty 2 -8 0 10 -204800 -1 -1 0;
 #X obj 212 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
@@ -505,11 +505,11 @@ empty 0 -8 0 8 -204800 -1 -1 0;
 #X obj 282 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
 13 -4 -8 0 10 -204800 -1 -1 0;
 #X obj 292 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-empty 0 -8 0 8 -261682 -1 -1 0;
+empty 0 -8 0 8 -261682 -1 -1 4;
 #X obj 302 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-empty 0 -8 0 8 -261682 -1 -1 0;
+empty 0 -8 0 8 -261682 -1 -1 4;
 #X obj 312 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
-empty 0 -8 0 8 -261682 -1 -1 0;
+empty 0 -8 0 8 -261682 -1 -1 4;
 #X obj 322 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
 empty 0 -8 0 8 -261682 -1 -1 0;
 #X obj 332 115 vradio 10 1 0 6 THIS_HIDES_THE_OUTLET ARDUINO_TEST_RESET
@@ -1066,10 +1066,10 @@ empty -4 -8 0 10 -203904 -1 -1 0;
 #X restore -131 62 pd old analog/digital controls;
 #X text -315 117 <-- pulse all outputs;
 #X text -282 372 analog inputs:;
-#X msg -186 36 open 4;
+#X msg -186 36 open 3;
 #X text -435 34 switch pin to 'pwm' or 'servo' first;
-#X msg -440 97 analog 1 0;
-#X msg -46 187 pinMode 45 input;
+#X msg -440 97 analog 4 0;
+#X msg -46 187 pinMode 4 pwm;
 #X floatatom -126 569 5 0 0 3 a8 - -;
 #X floatatom -80 569 5 0 0 3 a9 - -;
 #X floatatom -34 569 5 0 0 3 a10 - -;
@@ -1284,6 +1284,12 @@ empty -4 -8 0 10 -203904 -1 -1 0;
 #X restore -495 180 pd strings and special messages;
 #X text 299 261 Patch Arduino modifie pour le MEGA;
 #X obj -186 500 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X floatatom 194 203 5 0 0 0 - - -;
+#X msg 182 225 analog 14 \$1;
+#X msg 182 249 analog 15 \$1;
+#X msg 184 271 analog 16 \$1;
+#X floatatom 261 206 5 0 0 0 - - -;
+#X floatatom 280 237 5 0 0 0 - - -;
 #X connect 0 0 46 0;
 #X connect 0 1 2 0;
 #X connect 2 0 60 0;
@@ -1397,3 +1403,9 @@ empty -4 -8 0 10 -203904 -1 -1 0;
 #X connect 119 13 58 5;
 #X connect 119 14 58 6;
 #X connect 119 15 58 7;
+#X connect 120 0 121 0;
+#X connect 121 0 60 0;
+#X connect 122 0 60 0;
+#X connect 123 0 60 0;
+#X connect 124 0 122 0;
+#X connect 125 0 123 0;
